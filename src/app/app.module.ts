@@ -5,7 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { UtilisateurComponent } from './components/utilisateur/utilisateur.component';
-import { TrajetComponent } from './trajet/trajet.component';
+import { TrajetComponent } from './components/trajet/trajet.component';
 
 @NgModule({
   declarations: [
