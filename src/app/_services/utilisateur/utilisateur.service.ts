@@ -16,8 +16,8 @@ export class UtilisateurService {
     return this.http.get<Utilisateur[]>(this.baseUrl);
   }
 
-  public getUserById(id: number) {
-    return this.http.get(`${this.baseUrl}/${id}`);
+  public getUserById(id: number): Observable<Utilisateur> {
+    return this.http.get<Utilisateur>(`${this.baseUrl}/${id}`);
   }
 
 }

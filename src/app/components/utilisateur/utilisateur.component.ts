@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UtilisateurService } from 'src/app/_services/utilisateur/utilisateur.service';
 import { Utilisateur } from 'src/app/models/utilisateur/utilisateur.model';
+import { Router, ActivatedRoute, Params } from '@angular/router';
 
 @Component({
   selector: 'app-utilisateur',
@@ -9,14 +10,16 @@ import { Utilisateur } from 'src/app/models/utilisateur/utilisateur.model';
 })
 export class UtilisateurComponent implements OnInit {
 
-  utilisateurs: Utilisateur[] ;
+  id : number ;
+  utilisateur: Utilisateur ;
 
-  constructor(private utilisateurService: UtilisateurService) { }
+  constructor(private utilisateurService: UtilisateurService,private route: ActivatedRoute) { }
 
   ngOnInit() {
-    this.utilisateurService.getUsers().subscribe(res => {
-      this.utilisateurs = res;
-      console.log(this.utilisateurs);
+    this.id = Number(this.route.snapshot.paramMap.get('id'));
+    this.utilisateurService.getUserById(this.id).subscribe(res => {
+      this.utilisateur = res;
+      console.log(this.utilisateur);
     }, err => {
       console.log(err);
     });
