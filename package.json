@@ -19,6 +19,8 @@
     "@angular/platform-browser": "~8.0.3",
     "@angular/platform-browser-dynamic": "~8.0.3",
     "@angular/router": "~8.0.3",
+    "leaflet": "^1.5.1",
+    "leaflet-routing-machine": "^3.2.12",
     "primeflex": "^1.0.0-rc.1",
     "primeicons": "^2.0.0",
     "primeng": "^8.0.2",
