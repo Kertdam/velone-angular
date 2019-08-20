@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
+import {InputTextareaModule} from 'primeng/inputtextarea';
+import {InputTextModule} from 'primeng/inputtext';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -20,8 +22,9 @@ import { FormTrajetComponent } from './components/form-trajet/form-trajet.compon
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    
-    
+    InputTextareaModule,
+    InputTextModule
+
   ],
   providers: [],
   bootstrap: [AppComponent]
