@@ -11,11 +11,11 @@ baseUrl = 'http://localhost:8080/trajet';
 
 constructor(private http: HttpClient) { }
 
-public getUsers(): Observable<Trajet[]> {
+public getTrajets(): Observable<Trajet[]> {
   return this.http.get<Trajet[]>(this.baseUrl);
 }
 
-public getUserById(id: number): Observable<Trajet> {
+public getTrajetById(id: number): Observable<Trajet> {
   return this.http.get<Trajet>(`${this.baseUrl}/${id}`);
 }
 

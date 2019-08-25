@@ -1,6 +1,39 @@
-<p>trajet works!</p>
-<div>
-    <h2>Titre du trajet</h2>
-    <p>Description :</p>
-    <p>Description du trajet</p>
+<div class="p-grid">
+    <div class="p-col-4">
+        <div class="p-grid p-align-center">
+                <div class="p-col-12">
+                    <div class="p-grid">
+                            <div class="p-col">
+                                    <h2>{{ trajet.nom }}</h2>
+                            </div> 
+                            <div class="p-col">
+                                   <p>crée par {{trajet.utilisateur.nom}} {{trajet.utilisateur.prenom}}</p> 
+                            </div>
+                    </div>
+                </div>
+                <div class="p-col">
+                        <p>Description :</p>
+                        <p>{{ trajet.description }}</p>
+                </div>
+                <div class="p-col">
+                    <p>Date de depart:</p>
+                    <p>{{ trajet.dateDepart }}</p>
+                </div>
+                <div class="p-col-12">
+                    <p>Etape</p>
+                </div>
+        </div>
+    </div>
+    <div id="carte"class="p-col-8">
+        Carte Trajet
+    </div>
+    <div class="p-col">
+        List des fichiers
+    </div>
+    <div class="p-col">
+        List des Membres
+    </div>
+    <div class="p-col">
+        List des Membres
+    </div>
 </div>

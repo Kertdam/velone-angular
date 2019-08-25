@@ -4,7 +4,8 @@ import { UtilisateurComponent } from './components/utilisateur/utilisateur.compo
 import { TrajetComponent } from './components/trajet/trajet.component';
 
 const routes: Routes = [
-  { path:'',pathMatch:'full', redirectTo: '/home'},
+  //{ path:'home', component: UtilisateurComponent },
+  //{ path:'',pathMatch:'full', redirectTo: '/home'},
   { path:'utilisateur/:id', component: UtilisateurComponent },
   { path:'trajet/:id', component: TrajetComponent}
 ];
