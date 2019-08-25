@@ -7,16 +7,16 @@ import { Trajet } from 'src/app/models/trajet/trajet.model';
 })
 export class TrajetService {
 
-baseUrl = 'http://localhost:8080/trajet';
+  baseUrl = 'http://localhost:8080/trajet';
 
-constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) { }
 
-public getTrajets(): Observable<Trajet[]> {
-  return this.http.get<Trajet[]>(this.baseUrl);
-}
+  public getTrajets(): Observable<Trajet[]> {
+    return this.http.get<Trajet[]>(this.baseUrl);
+  }
 
-public getTrajetById(id: number): Observable<Trajet> {
-  return this.http.get<Trajet>(`${this.baseUrl}/${id}`);
-}
+  public getTrajetById(id: number): Observable<Trajet> {
+    return this.http.get<Trajet>(`${this.baseUrl}/${id}`);
+  }
 
 }

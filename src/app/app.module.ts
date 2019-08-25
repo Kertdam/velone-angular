@@ -6,16 +6,21 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { UtilisateurComponent } from './components/utilisateur/utilisateur.component';
 import { TrajetComponent } from './components/trajet/trajet.component';
+import { TrajetsComponent } from './components/trajets/trajets.component';
+
+import {CardModule} from 'primeng/card';
 @NgModule({
   declarations: [
     AppComponent,
     UtilisateurComponent,
-    TrajetComponent
+    TrajetComponent,
+    TrajetsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    CardModule
   ],
   providers: [],
   bootstrap: [AppComponent]

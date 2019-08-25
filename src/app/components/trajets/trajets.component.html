@@ -1,0 +1,14 @@
+<div class="p-grid">
+    <div class="p-col-3" *ngFor="let trajet of trajets">
+            <p-card>
+                    <p-header>
+                       <a [routerLink]="['/trajet',trajet.id]" routerLinkActive="router-link-active">{{trajet.nom}} </a>
+                    </p-header>
+                        {{trajet.description}} depart prévu le {{trajet.dateDepart}}
+                    <p-footer>
+                            <a [routerLink]="['/utilisateur',trajet.utilisateur.id]" routerLinkActive="router-link-active" >{{trajet.utilisateur.nom}} {{trajet.utilisateur.prenom}}</a>
+                    </p-footer>
+            </p-card>
+    </div>
+</div>
+<router-outlet></router-outlet>
