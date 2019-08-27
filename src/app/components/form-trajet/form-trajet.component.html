@@ -1,0 +1,17 @@
+<form [formGroup]="trajetForm" (ngSubmit)="handleSubmit()" >
+
+    <h1>Créer votre nouveau trajet</h1>
+
+    <div class="ui-g ui-fluid">
+        <div class="ui-g-12 ui-md-4">
+            <div class="ui-inputgroup">
+                <input type="text" pInputText placeholder="Nom du trajet" formControlName="nomTrajet" >
+            </div>
+        </div>
+
+        
+    </div>
+
+    <button class="button" type="submit">Submit</button>
+
+</form>
