@@ -1,4 +1,4 @@
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule, } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 
@@ -9,20 +9,29 @@ import { TrajetComponent } from './components/trajet/trajet.component';
 import { TrajetsComponent } from './components/trajets/trajets.component';
 
 import {CardModule} from 'primeng/card';
+import {MenuModule} from 'primeng/menu';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 import { CarteStatiqueComponent } from './Components/carte-statique/carte-statique.component';
+import { MenuProfilComponent } from './components/menu-profil/menu-profil.component';
+import { ProfilComponent } from './components/profil/profil.component';
 @NgModule({
   declarations: [
     AppComponent,
     UtilisateurComponent,
     TrajetComponent,
     TrajetsComponent,
-    CarteStatiqueComponent
+    CarteStatiqueComponent,
+    MenuProfilComponent,
+    ProfilComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    CardModule
+    CardModule,
+    MenuModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
