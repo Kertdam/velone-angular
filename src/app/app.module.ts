@@ -9,12 +9,14 @@ import { TrajetComponent } from './components/trajet/trajet.component';
 import { TrajetsComponent } from './components/trajets/trajets.component';
 
 import {CardModule} from 'primeng/card';
+import { FooterComponent } from './components/footer/footer.component';
 @NgModule({
   declarations: [
     AppComponent,
     UtilisateurComponent,
     TrajetComponent,
-    TrajetsComponent
+    TrajetsComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
