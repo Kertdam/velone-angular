@@ -9,12 +9,14 @@ import { TrajetComponent } from './components/trajet/trajet.component';
 import { TrajetsComponent } from './components/trajets/trajets.component';
 
 import {CardModule} from 'primeng/card';
+import { CarteStatiqueComponent } from './Components/carte-statique/carte-statique.component';
 @NgModule({
   declarations: [
     AppComponent,
     UtilisateurComponent,
     TrajetComponent,
-    TrajetsComponent
+    TrajetsComponent,
+    CarteStatiqueComponent
   ],
   imports: [
     BrowserModule,

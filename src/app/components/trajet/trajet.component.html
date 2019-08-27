@@ -25,19 +25,19 @@
                         <p>{{etape.nom}}</p>
                     </div>
                 </div>
+                <div id="fichiers" class="p-col-12">
+                        List des fichiers
+                    </div>
+                    <div class="p-col-12">
+                        List des Membres
+                    </div>
+                    <div class="p-col-12">
+                        List des Equipement
+                </div>
         </div>
     </div>
-    <div id="carte"class="p-col-8">
-        Carte Trajet
-    </div>
-    <div id="fichiers" class="p-col">
-        List des fichiers
-    </div>
-    <div class="p-col">
-        List des Membres
-    </div>
-    <div class="p-col">
-        List des Membres
-    </div>
+   
+            <app-carte-statique class="p-col-8" [trajet]="trajet"></app-carte-statique>
+    
 </div>
 <router-outlet></router-outlet>
