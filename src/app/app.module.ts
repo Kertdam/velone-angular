@@ -1,6 +1,7 @@
 import { BrowserModule, } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
+import { FormsModule }   from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -11,10 +12,12 @@ import { TrajetsComponent } from './components/trajets/trajets.component';
 import {CardModule} from 'primeng/card';
 import {MenuModule} from 'primeng/menu';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {AutoCompleteModule} from 'primeng/autocomplete';
 
 import { CarteStatiqueComponent } from './Components/carte-statique/carte-statique.component';
 import { MenuProfilComponent } from './components/menu-profil/menu-profil.component';
 import { ProfilComponent } from './components/profil/profil.component';
+import { TestGeocodingComponent } from './components/test-geocoding/test-geocoding.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +26,8 @@ import { ProfilComponent } from './components/profil/profil.component';
     TrajetsComponent,
     CarteStatiqueComponent,
     MenuProfilComponent,
-    ProfilComponent
+    ProfilComponent,
+    TestGeocodingComponent
   ],
   imports: [
     BrowserModule,
@@ -31,7 +35,9 @@ import { ProfilComponent } from './components/profil/profil.component';
     HttpClientModule,
     CardModule,
     MenuModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    AutoCompleteModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
