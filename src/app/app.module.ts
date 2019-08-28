@@ -3,6 +3,9 @@ import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import { InputTextareaModule } from 'primeng/inputtextarea';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { InputTextModule } from 'primeng/inputtext';
+import { CalendarModule } from 'primeng/calendar';
+import { DatePipe } from '@angular/common';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -19,6 +22,7 @@ import { MenuProfilComponent } from './components/menu-profil/menu-profil.compon
 import { ProfilComponent } from './components/profil/profil.component';
 import { FormTrajetComponent } from './components/form-trajet/form-trajet.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,6 +33,7 @@ import { FormTrajetComponent } from './components/form-trajet/form-trajet.compon
     MenuProfilComponent,
     ProfilComponent,
     FormTrajetComponent
+    
   ],
   imports: [
     BrowserModule,
@@ -39,9 +44,11 @@ import { FormTrajetComponent } from './components/form-trajet/form-trajet.compon
     BrowserAnimationsModule,
     InputTextareaModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    InputTextModule,
+    CalendarModule
   ],
-  providers: [],
+  providers: [DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

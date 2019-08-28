@@ -1,17 +1,58 @@
-<form [formGroup]="trajetForm" (ngSubmit)="handleSubmit()" >
 
+
+
+<div class="p-grid p-justify-center">
+    
     <h1>Créer votre nouveau trajet</h1>
+    
 
-    <div class="ui-g ui-fluid">
-        <div class="ui-g-12 ui-md-4">
-            <div class="ui-inputgroup">
-                <input type="text" pInputText placeholder="Nom du trajet" formControlName="nomTrajet" >
-            </div>
-        </div>
+</div>
 
-        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<form [formGroup]="trajetForm" (ngSubmit)="handleSubmit()">
+
+  <h1>Créer votre nouveau trajet</h1>
+
+  <div class="ui-g ui-fluid">
+    <div class="ui-g-12 ui-md-4">
+      <div class="ui-inputgroup">
+        <input type="text" pInputText placeholder="Nom du trajet" formControlName="nomCtrl">
+
+
+      </div>
     </div>
 
-    <button class="button" type="submit">Submit</button>
+    <div class="ui-g-12 ui-md-4">
+      <textarea [rows]="5" [cols]="30" pInputTextarea autoResize="autoResize" placeholder="Description du trajet"
+        formControlName="descCtrl"></textarea>
+
+    </div>
+
+    <div class="ui-g-12 ui-md-4">
+
+        <p-calendar formControlName="dateCtrl" dateFormat="yy.mm.dd" showTime="true" hourFormat="24"></p-calendar>
+
+    </div>
+
+
+
+  </div>
+
+  <button class="button" type="submit">Submit</button>
 
 </form>
