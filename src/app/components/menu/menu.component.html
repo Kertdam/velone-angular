@@ -1,0 +1,10 @@
+<p-menubar [model]="items" [autoDisplay]="false" id="menuBack" class="text-font">
+        
+    <a [routerLink]="['home']"> <img src="../../../assets/logo.svg"   class="logo" id="logo" /></a>
+<input type="text" pInputText placeholder="Chercher">
+<a [routerLink]="['login']">
+<button pButton label="Login" icon="fa fa-sign-in" id="reasonButton" style="margin-left:.25em"
+(click)="handleClick()" ></button></a>
+
+</p-menubar>
+

@@ -15,6 +15,19 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CarteStatiqueComponent } from './Components/carte-statique/carte-statique.component';
 import { MenuProfilComponent } from './components/menu-profil/menu-profil.component';
 import { ProfilComponent } from './components/profil/profil.component';
+import { MenuComponent } from './components/menu/menu.component';
+import { LoginFormComponent } from './components/login-form/login-form.component';
+
+
+import {MenubarModule} from 'primeng/menubar';
+
+import {TabMenuModule} from 'primeng/tabmenu';
+import {SplitButtonModule} from 'primeng/splitbutton';
+import {PasswordModule} from 'primeng/password';
+import {InputTextModule} from 'primeng/inputtext';
+import { FormsModule } from '@angular/forms';
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +36,9 @@ import { ProfilComponent } from './components/profil/profil.component';
     TrajetsComponent,
     CarteStatiqueComponent,
     MenuProfilComponent,
-    ProfilComponent
+    ProfilComponent,
+    MenuComponent,
+    LoginFormComponent
   ],
   imports: [
     BrowserModule,
@@ -31,7 +46,16 @@ import { ProfilComponent } from './components/profil/profil.component';
     HttpClientModule,
     CardModule,
     MenuModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MenubarModule,
+   
+    TabMenuModule,
+    SplitButtonModule,
+    PasswordModule,
+    InputTextModule,
+    FormsModule,
+    CardModule,
+   
   ],
   providers: [],
   bootstrap: [AppComponent]

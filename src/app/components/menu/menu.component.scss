@@ -1,0 +1,61 @@
+.main_content {
+    text-align: center ;
+    margin-top: 5% ; 
+ }
+ 
+ // #reasonButton {
+ //     background-color: #ae5f5f !important;
+ //     color: #db0f0f !important;
+ // }
+ ::ng-deepbody .ui-button:enabled:hover {
+     background-color: #10517c;
+     color: #eaeaea;
+     border-color: #116fbf;
+    
+     body .ui-button {
+         margin: 0;
+         color: #ffffff;
+         background-color: #dde6ed;
+         border: 1px solid #007ad9;
+         font-size: 14px;
+         transition: background-color 0.2s, box-shadow 0.2s;
+     }
+     
+ }
+ ::ng-deep body .ui-menubar {
+    padding: 0;
+    padding: 0;
+    background-color: #b3c3cc;
+    border: 2px solid #133d5f;;
+}
+ ::ng-deep body {
+     background-color: rgb(229, 231, 219);
+ }
+ ::ng-deep body .ui-button {
+     margin: 0;
+     color: #ffffff;
+     background-color: #d9e3eb;
+     border: 1px solid #9dabb6;
+     font-size: 14px;
+     transition: background-color 0.2s, box-shadow 0.2s;
+ }
+ ::ng-deep body .ui-button {
+     margin: 0;
+     color: #010000;
+     background-color: #d9e3eb;
+     border: 1px solid #010e17;
+     font-size: 14px;
+     transition: background-color 0.2s, box-shadow 0.2s;
+ }
+  .logo {
+ 
+     height: 35px;
+     position:absolute;
+     left:10px;
+ 
+ }
+ 
+
+ ::ng-deepbody body .ui-menu .ui-menuitem-link .ui-menuitem-text, body .ui-menubar .ui-menuitem-link .ui-menuitem-text, body .ui-tieredmenu .ui-menuitem-link .ui-menuitem-text, body .ui-contextmenu .ui-menuitem-link .ui-menuitem-text, body .ui-megamenu .ui-menuitem-link .ui-menuitem-text, body .ui-slidemenu .ui-menuitem-link .ui-menuitem-text {
+    color: #e5dddd;
+}
