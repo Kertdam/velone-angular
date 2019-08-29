@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, OnChanges } from '@angular/core';
 import { GeocodingService } from 'src/app/_services/geocoding/geocoding.service';
 
 @Component({
@@ -9,7 +9,7 @@ import { GeocodingService } from 'src/app/_services/geocoding/geocoding.service'
 export class TestGeocodingComponent implements OnInit {
   val : any ;
   datas: any[] ;
-  results: string[] ;
+  results: string[];
 
   constructor(private geocodingService: GeocodingService) { }
 
@@ -32,7 +32,6 @@ export class TestGeocodingComponent implements OnInit {
           });
           this.results=tmp;*/
       });
-      console.log(this.results);
   }
 
   handleDropdown(event) {
