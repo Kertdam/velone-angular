@@ -20,4 +20,19 @@ export class UtilisateurService {
     return this.http.get<Utilisateur>(`${this.baseUrl}/${id}`);
   }
 
+  public getUserByNomOrPrenom(nom:string,prenom:string){
+    return this.http.get<Utilisateur>(`${this.baseUrl}/${nom}/$`);
+  }
+
+  public addUtilisateur(utilisateur: Utilisateur): Observable<Utilisateur> {
+    return this.http.post<Utilisateur>(`${this.baseUrl}`, utilisateur);
+  }
+
+  public deleteUtilisateur(id: number): Observable<Utilisateur> {
+    return this.http.delete<Utilisateur>(`${this.baseUrl}/${id}`);
+  }
+
+  public updateUtilisateur(utilisateur: Utilisateur): Observable<Utilisateur> {
+    return this.http.put<Utilisateur>(`${this.baseUrl}/${utilisateur.id}`, utilisateur);
+  }
 }

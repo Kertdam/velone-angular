@@ -24,16 +24,17 @@ export class EquipementService {
     return this.http.get<Equipement[]>(`${this.baseUrl}/nom/${nom}`);
   }
 
+  public addEquipement(equipement: Equipement): Observable<Equipement> {
+    return this.http.post<Equipement>(`${this.baseUrl}`, equipement);
+  }
+
   public deleteEquipement(id: number): Observable<Equipement> {
     return this.http.delete<Equipement>(`${this.baseUrl}/${id}`);
   }
 
-  public updateEquipement(equipement:Equipement): Observable<Equipement> {
-    return this.http.put<Equipement>(`${this.baseUrl}/${equipement.id}`,equipement);
+  public updateEquipement(equipement: Equipement): Observable<Equipement> {
+    return this.http.put<Equipement>(`${this.baseUrl}/${equipement.id}`, equipement);
   }
 
-  public addEquipement(equipement:Equipement): Observable<Equipement> {
-    return this.http.post<Equipement>(`${this.baseUrl}`, equipement);
-  }
   
 }

@@ -19,4 +19,24 @@ export class TrajetService {
     return this.http.get<Trajet>(`${this.baseUrl}/${id}`);
   }
 
+  public getTrajetByNom(nom: string): Observable<Trajet> {
+    return this.http.get<Trajet>(`${this.baseUrl}/${nom}`);
+  }
+
+  public getTrajetByTrajetId(id: number): Observable<Trajet> {
+    return this.http.get<Trajet>(`${this.baseUrl}/idTrajet/${id}`);
+  }
+
+  public addTrajet(trajet: Trajet): Observable<Trajet> {
+    return this.http.post<Trajet>(`${this.baseUrl}`, trajet);
+  }
+
+  public deleteTrajet(id: number): Observable<Trajet> {
+    return this.http.delete<Trajet>(`${this.baseUrl}/${id}`);
+  }
+
+  public updateTrajet(trajet: Trajet): Observable<Trajet> {
+    return this.http.put<Trajet>(`${this.baseUrl}/${trajet.id}`, trajet);
+  }
+
 }
