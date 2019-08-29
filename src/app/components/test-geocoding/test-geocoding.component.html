@@ -1,2 +1,5 @@
 <p>test-geocoding works!</p>
-<p-autoComplete [(ngModel)]="text" [suggestions]="results" (completeMethod)="search($event)"></p-autoComplete>
+<p-autoComplete [(ngModel)]="val" [suggestions]="datas" field="properties.label" (completeMethod)="search($event)"></p-autoComplete>
+<input type="hidden" name="lat" value="{{val}}" />
+<input type="hidden" name="long" value="{{val}}" />
+<span > {{val.properties}}</span>

@@ -7,8 +7,8 @@ import { GeocodingService } from 'src/app/_services/geocoding/geocoding.service'
   styleUrls: ['./test-geocoding.component.scss']
 })
 export class TestGeocodingComponent implements OnInit {
-  text: string;
-  datas: any ;
+  val : any ;
+  datas: any[] ;
   results: string[] ;
 
   constructor(private geocodingService: GeocodingService) { }
@@ -20,14 +20,17 @@ export class TestGeocodingComponent implements OnInit {
 
   search(event) {
       this.geocodingService.getGeocode(event.query).subscribe(data => {
-          const tmp:string[]=[];
+        console.log(data);
+        this.datas = data.features ;
+        
+        /*const tmp:string[]=[];
           this.datas = data;
           
           data.features.forEach(feature => {
-            console.log(feature.properties.label);
+            console.log(feature.properties);
             tmp.push(feature.properties.label);
           });
-          this.results=tmp;
+          this.results=tmp;*/
       });
       console.log(this.results);
   }
