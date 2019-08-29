@@ -2,6 +2,8 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Trajet } from 'src/app/models/trajet/trajet.model';
+import { FormGroup } from '@angular/forms';
+import { environment } from 'src/environments/environment';
 @Injectable({
   providedIn: 'root'
 })
