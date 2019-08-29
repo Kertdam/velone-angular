@@ -28,8 +28,6 @@ import {MenubarModule} from 'primeng/menubar';
 import {TabMenuModule} from 'primeng/tabmenu';
 import {SplitButtonModule} from 'primeng/splitbutton';
 import {PasswordModule} from 'primeng/password';
-import {InputTextModule} from 'primeng/inputtext';
-import { FormsModule } from '@angular/forms';
 
 import { FormTrajetComponent } from './components/form-trajet/form-trajet.component';
 import { MembreTrajetsComponent } from './components/membre-trajets/membre-trajets.component';
@@ -43,7 +41,7 @@ import { MembreTrajetsComponent } from './components/membre-trajets/membre-traje
     MenuProfilComponent,
     ProfilComponent,
     MenuComponent,
-    LoginFormComponent
+    LoginFormComponent,
     FormTrajetComponent,
     MembreTrajetsComponent
   ],
