@@ -21,6 +21,7 @@ import { CarteStatiqueComponent } from './Components/carte-statique/carte-statiq
 import { MenuProfilComponent } from './components/menu-profil/menu-profil.component';
 import { ProfilComponent } from './components/profil/profil.component';
 import { FormTrajetComponent } from './components/form-trajet/form-trajet.component';
+import { MembreTrajetsComponent } from './components/membre-trajets/membre-trajets.component';
 
 
 @NgModule({
@@ -32,7 +33,8 @@ import { FormTrajetComponent } from './components/form-trajet/form-trajet.compon
     CarteStatiqueComponent,
     MenuProfilComponent,
     ProfilComponent,
-    FormTrajetComponent
+    FormTrajetComponent,
+    MembreTrajetsComponent
     
   ],
   imports: [

@@ -1,25 +1,28 @@
+<div class="p-align-center p-grid p-dir-col p-justify-center">
+  <p-card class="p-justify-center p-align-center">
+    <h3>Créer votre nouveau trajet</h3>
+    <form [formGroup]="trajetForm" (ngSubmit)="handleSubmit()">
+      <div class="p-col-12 p-align-center p-justify-center p-align-center" id="test">
 
-<div class="p-grid p-dir-col p-justify-center">
-    
-  <h1>Créer votre nouveau trajet</h1>
-  <form [formGroup]="trajetForm" (ngSubmit)="handleSubmit()">
-    <div class="p-col-6 p-justify-center p-align-center" id="test">
+        <input type="text" pInputText placeholder="Nom du trajet" formControlName="nomCtrl">
 
-      <input type="text" pInputText placeholder="Nom du trajet" formControlName="nomCtrl">
+      </div>
+      <div class="p-col p-align-center p-justify-center">
 
-    </div>
-    <div class="p-col p-justify-center">
+        <textarea [rows]="5" [cols]="30" pInputTextarea autoResize="autoResize" placeholder="Description du trajet"
+          formControlName="descCtrl"></textarea>
+      </div>
+      <div class="p-align-center p-col p-justify-center">
 
-      <textarea [rows]="5" [cols]="30" pInputTextarea autoResize="autoResize" placeholder="Description du trajet"
-      formControlName="descCtrl"></textarea>
-    </div>
-    <div class="p-col p-justify-center">
+        <p-calendar formControlName="dateCtrl" dateFormat="yy.mm.dd" showTime="true" hourFormat="24"></p-calendar>
 
-      <p-calendar formControlName="dateCtrl" dateFormat="yy.mm.dd" showTime="true" hourFormat="24"></p-calendar>
-    
-    </div>
-    <button class="button" type="submit">Submit</button>
+      </div>
+      <div class="p-align-center p-col p-justify-center">
+        <button class="button " type="submit">Submit</button>
+      </div>
+      
 
-  </form>
+    </form>
+  </p-card>
 
 </div>
