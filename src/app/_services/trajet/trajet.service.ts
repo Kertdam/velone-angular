@@ -9,7 +9,7 @@ import { environment } from 'src/environments/environment';
 })
 export class TrajetService {
 
-  baseUrl = 'http://localhost:8080/trajet';
+  baseUrl = 'http://localhost:8080/trajets';
 
   constructor(private http: HttpClient) { }
 

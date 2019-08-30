@@ -7,7 +7,7 @@ import { Statistique } from 'src/app/models/statistique/statistique.model';
 })
 export class StatistiqueService {
 
-  baseUrl = 'http://localhost:8080/statistique';
+  baseUrl = 'http://localhost:8080/statistiques';
 
   constructor(private http: HttpClient) { }
 

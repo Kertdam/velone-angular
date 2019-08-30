@@ -7,7 +7,7 @@ import { PointInteret } from 'src/app/models/PointInteret/point-interet.model';
 })
 export class PointInteretService {
 
-  baseUrl = 'http://localhost:8080/pointInteret';
+  baseUrl = 'http://localhost:8080/pointInterets';
 
   constructor(private http: HttpClient) { }
 

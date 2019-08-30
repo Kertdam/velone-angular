@@ -7,7 +7,7 @@ import { Membre } from 'src/app/models/membre/membre.model';
 })
 export class MembreService {
 
-  baseUrl = 'http://localhost:8080/membre';
+  baseUrl = 'http://localhost:8080/membres';
 
   constructor(private http: HttpClient) { }
 

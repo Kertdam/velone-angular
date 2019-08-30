@@ -7,7 +7,7 @@ import { Fichier } from 'src/app/models/fichier/fichier.model';
 })
 export class FichierService {
   
-  baseUrl = 'http://localhost:8080/fichier';
+  baseUrl = 'http://localhost:8080/fichiers';
 
   constructor(private http: HttpClient) { }
 
