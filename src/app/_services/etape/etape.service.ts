@@ -20,11 +20,11 @@ export class EtapeService {
   }
 
   public getEtapesByIdTrajet(id: number): Observable<Etape[]> {
-    return this.http.get<Etape[]>(`${this.baseUrl}/${id}`);
+    return this.http.get<Etape[]>(`${this.baseUrl}/trajetId/${id}`);
   }
 
-  public addEtape(equipement:Etape): Observable<Etape> {
-    return this.http.post<Etape>(`${this.baseUrl}`, equipement);
+  public addEtape(etape:Etape): Observable<Etape> {
+    return this.http.post<Etape>(`${this.baseUrl}`, etape);
   }
   public deleteEtape(id: number): Observable<Etape> {
     return this.http.delete<Etape>(`${this.baseUrl}/${id}`);

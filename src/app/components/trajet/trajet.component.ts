@@ -23,23 +23,28 @@ L.Icon.Default.mergeOptions({
 export class TrajetComponent implements OnInit {
 
   id: number;
-  trajet: Trajet = new Trajet();
+  trajet: Trajet;
+  isLoaded = false;
 
   constructor(private trajetService: TrajetService, private etapeService: EtapeService, private route: ActivatedRoute) { }
 
   ngOnInit() {
     this.id = Number(this.route.snapshot.paramMap.get('id'));
-    this.trajetService.getTrajetById(this.id).subscribe(res => {
-      this.trajet = res;
+    this.trajetService.getTrajetById(this.id).subscribe(trajet => {
       
+      this.etapeService.getEtapesByIdTrajet(trajet.id).subscribe(etapes => {
+        this.trajet = trajet;
+        this.trajet.etapes = etapes ;
+      }, err => {
+        console.log(err);
+      }); 
       // En attendant d'avoir le back pour Etape
-      /* this.trajet.etapes = [{ "id": 1, "nom": "Etape1", "lattitude": 49.8941708, "longitude": 2.2956951, "elevation": 40.00 },
-      { "id": 2, "nom": "Etape2", "lattitude": 49.9862177, "longitude": 2.4444840, "elevation": 40.00 },
-      { "id": 3, "nom": "Etape3", "lattitude": 50.0053294, "longitude": 2.4786409, "elevation": 40.00 },
-      { "id": 3, "nom": "Etape3", "lattitude": 50.0728994, "longitude": 2.5306202, "elevation": 40.00 }]; */
+      
     }, err => {
       console.log(err);
     });
   }
+
+        
 
 }

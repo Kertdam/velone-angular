@@ -22,7 +22,9 @@ export class CarteStatiqueComponent {
 
   @Input() trajet: Trajet;
 
-  constructor() { }
+  constructor() { 
+    console.log('composant carte statistique' + this.trajet)
+  }
 
   ngAfterViewInit() {
     let tmp = 'carte-'+this.trajet.id ;
@@ -38,11 +40,12 @@ export class CarteStatiqueComponent {
       tap: false,
       touchZoom: false
     })
-
+    console.log(this.trajet.etapes)
     // Transform Etape to Waypoint
     for (let etape of this.trajet.etapes) {
-      wp.push(L.latLng(etape.lattitude, etape.longitude));
+        wp.push(L.latLng(etape.lattitude, etape.longitude));
     }
+    console.log("wp"+wp);
 
     carte.fitBounds(this.detectBounds());
 
