@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {MenuItem} from 'primeng/api';
+import { MenuItem } from 'primeng/api';
 import { Router } from '@angular/router';
 
 @Component({
@@ -9,39 +9,37 @@ import { Router } from '@angular/router';
 })
 export class MenuComponent implements OnInit {
 
-  
+
   items: MenuItem[];
 
-  constructor(private router : Router 
-    
-    ) { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
- 
+
     this.items = [
       {
-        label: 'logo', 
-       
-    },
-      {
-          label: 'Menu', routerLink: ['/menu'] , 
-         
-      },
-      {
-          label: 'Trajets' , routerLink: ['/trajets'] ,
-         
-      },
-      {
-          label: 'Inventaire', routerLink: ['/inventaire'] ,
+        label: 'logo',
 
       },
-      {separator: true},
-  ];
+      {
+        label: 'Menu', routerLink: ['/menu'],
+
+      },
+      {
+        label: 'Trajets', routerLink: ['/trajets'],
+
+      },
+      {
+        label: 'Inventaire', routerLink: ['/inventaire'],
+
+      },
+      { separator: true },
+    ];
   }
 
-  handleClick() :void {
-  // alert("ok");
-   this.router.navigate(['login']);
+  handleClick(): void {
+    // alert("ok");
+    this.router.navigate(['login']);
 
-}
+  }
 }
