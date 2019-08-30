@@ -41,7 +41,8 @@ import { FormTrajetComponent } from './components/form-trajet/form-trajet.compon
     ProfilComponent,
     MenuComponent,
     LoginFormComponent,
-    FormTrajetComponent
+    FormTrajetComponent,
+    MembreTrajetsComponent
   ],
   imports: [
     BrowserModule,

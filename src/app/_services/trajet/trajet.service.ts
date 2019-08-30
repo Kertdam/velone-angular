@@ -41,4 +41,9 @@ export class TrajetService {
     return this.http.put<Trajet>(`${this.baseUrl}/${trajet.id}`, trajet);
   }
 
+  public getTrajetsByMembreId(id: number): Observable<Trajet[]> {
+    return this.http.get<Trajet[]>(`${this.baseUrl}/membreId/${id}`);
+  }
+
+
 }

@@ -5,6 +5,8 @@ import { UtilisateurComponent } from './components/utilisateur/utilisateur.compo
 import { TrajetComponent } from './components/trajet/trajet.component';
 import { TrajetsComponent } from './components/trajets/trajets.component';
 import { ProfilComponent } from './components/profil/profil.component';
+import { MembreTrajetsComponent } from './components/membre-trajets/membre-trajets.component';
+import { FormTrajetComponent } from './components/form-trajet/form-trajet.component';
 
 
 const routes: Routes = [
@@ -13,7 +15,9 @@ const routes: Routes = [
   { path: 'utilisateur/:id', component: UtilisateurComponent },
   //{ path: 'trajets', component: TrajetsComponent },
   { path: 'trajet/:id', component: TrajetComponent },
-  {path: 'login', component: LoginFormComponent},
+  { path: 'login', component: LoginFormComponent},
+  { path: 'form-trajet', component: FormTrajetComponent },
+  { path: 'membre-trajets/:id', component: MembreTrajetsComponent },
   { path: 'profil', component: ProfilComponent, children: [
     {
         path: 'utilisateur/:id',
