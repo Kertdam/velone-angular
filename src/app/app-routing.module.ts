@@ -13,7 +13,7 @@ const routes: Routes = [
   //{ path:'home', component: UtilisateurComponent },
   //{ path:'',pathMatch:'full', redirectTo: '/home'},
   { path: 'utilisateur/:id', component: UtilisateurComponent },
-  //{ path: 'trajets', component: TrajetsComponent },
+  { path: 'trajets', component: TrajetsComponent },
   { path: 'trajet/:id', component: TrajetComponent },
   { path: 'login', component: LoginFormComponent},
   { path: 'form-trajet', component: FormTrajetComponent },

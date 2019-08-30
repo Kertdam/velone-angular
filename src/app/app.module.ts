@@ -31,6 +31,7 @@ import {PasswordModule} from 'primeng/password';
 
 import { FormTrajetComponent } from './components/form-trajet/form-trajet.component';
 import { MembreTrajetsComponent } from 'src/app/components/membre-trajets/membre-trajets.component';
+import { FooterComponent } from './components/footer/footer.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -44,6 +45,7 @@ import { MembreTrajetsComponent } from 'src/app/components/membre-trajets/membre
     LoginFormComponent,
     FormTrajetComponent,
     MembreTrajetsComponent
+    FooterComponent
   ],
   imports: [
     BrowserModule,
