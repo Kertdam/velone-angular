@@ -9,7 +9,7 @@ import { environment } from 'src/environments/environment';
 })
 export class TrajetService {
 
-  baseUrl = 'http://localhost:8080/trajet';
+  baseUrl = 'http://localhost:8080/trajets';
 
   constructor(private http: HttpClient) { }
 
@@ -22,9 +22,13 @@ export class TrajetService {
   }
 
   public addTrajet(trajet: Trajet): Observable<Trajet>  {
-    console.log('ma bite');
     return this.http.post<Trajet>(this.baseUrl, trajet);
 
   }
+
+  public getTrajetsByMembreId(id: number): Observable<Trajet[]> {
+    return this.http.get<Trajet[]>(`${this.baseUrl}/membreId/${id}`);
+  }
+
 
 }

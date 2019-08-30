@@ -17,6 +17,7 @@ const routes: Routes = [
   { path: 'trajet/:id', component: TrajetComponent },
   { path: 'login', component: LoginFormComponent},
   { path: 'form-trajet', component: FormTrajetComponent },
+  { path: 'membre-trajets/:id', component: MembreTrajetsComponent },
   { path: 'profil', component: ProfilComponent, children: [
     {
         path: 'utilisateur/:id',
