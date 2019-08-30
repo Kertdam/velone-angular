@@ -1,5 +1,6 @@
 <p>test-geocoding works!</p>
 <p-autoComplete [(ngModel)]="val" [suggestions]="datas" field="properties.label" (completeMethod)="search($event)"></p-autoComplete>
-<input type="hidden" name="latt" value="{{ val?.properties?.x }}"/>
-<input type="hidden" name="long" value="{{ val?.properties?.y }}"/>
-<span> {{val?.properties?.x}}</span>
+<input type="hidden" name="latt" value="{{ val?.geometry?.coordinates[0] }}"/>
+<input type="hidden" name="long" value="{{ val?.geometry?.coordinates[1] }}"/>
+
+<span>{{ val?.geometry?.coordinates[0]  }} {{ val?.geometry?.coordinates[1]  }} {{ val?.geometry?.coordinates[2]  }}</span>
