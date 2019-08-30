@@ -30,6 +30,7 @@ import {SplitButtonModule} from 'primeng/splitbutton';
 import {PasswordModule} from 'primeng/password';
 
 import { FormTrajetComponent } from './components/form-trajet/form-trajet.component';
+import { FooterComponent } from './components/footer/footer.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,6 +44,7 @@ import { FormTrajetComponent } from './components/form-trajet/form-trajet.compon
     LoginFormComponent,
     FormTrajetComponent,
     MembreTrajetsComponent
+    FooterComponent
   ],
   imports: [
     BrowserModule,
