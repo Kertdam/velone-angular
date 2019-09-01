@@ -1,6 +1,28 @@
 <p>test-geocoding works!</p>
-<p-autoComplete [(ngModel)]="val" [suggestions]="datas" field="properties.label" (completeMethod)="search($event)"></p-autoComplete>
-<input type="hidden" name="latt" value="{{ val?.geometry?.coordinates[0] }}"/>
-<input type="hidden" name="long" value="{{ val?.geometry?.coordinates[1] }}"/>
+<p-autoComplete name="nom" [(ngModel)]="val" [suggestions]="datas" field="properties.label"
+  (completeMethod)="search($event)"></p-autoComplete>
+<input type="hidden" name="latt" value="{{ val?.geometry?.coordinates[0] }}" />
+<input type="hidden" name="long" value="{{ val?.geometry?.coordinates[1] }}" />
 
-<span>{{ val?.geometry?.coordinates[0]  }} {{ val?.geometry?.coordinates[1]  }} {{ val?.geometry?.coordinates[2]  }}</span>
+<span>{{ val?.geometry?.coordinates[0]  }} {{ val?.geometry?.coordinates[1]  }}
+  {{ val?.geometry?.coordinates[2]  }}</span>
+
+  <form class="container pt-2" [formGroup]="formGroup">
+  <div formArrayName="trajet">
+    <h3>Etapes</h3> <button (click)="addEtapeGroup()">ajout etape</button>
+        <div [formGroupName]="i" *ngFor="let control of formGroup.get('trajet').controls; index as i">
+			<div class="form-group">
+                <p-autoComplete formControlName="nom" [suggestions]="datasNom" (onSelect)="searchData($event,i)" (completeMethod)="search2($event)"></p-autoComplete>
+                <input type="hidden" formControlName="lattitude" />
+                <input type="hidden" formControlName="longitude" />
+                <input type="hidden" formControlName="elevation" />
+			</div>
+		</div>
+  </div>
+</form>
+
+
+
+<pre>
+    {{ formGroup.value | json }}
+</pre>
