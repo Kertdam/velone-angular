@@ -1,44 +1,22 @@
-<div class="p-align-center p-grid p-dir-col p-justify-center">
-  <p-card class="p-justify-center p-align-center">
-    <h3>Créer votre nouveau trajet</h3>
-    <form [formGroup]="trajetForm" (ngSubmit)="handleSubmit()">
-      <div class="p-col-12 p-align-center p-justify-center p-align-center" id="test">
-
-        <input type="text" pInputText placeholder="Nom du trajet" formControlName="nomCtrl">
-
+<form [formGroup]="trajetForm">
+  <input type="text" formControlName="nom" pInputText>
+  <input type="text" formControlName="description" pInputText>
+  <input type="text" formControlName="dateDepart" pInputText>
+<div formArrayName="etapes" *ngFor="let item of trajetForm.get('etapes').controls; let i = index;">
+  <div [formGroupName]="i">
+      <div class="ui-inputgroup"> 
+          <p-autoComplete formControlName="nom" [suggestions]="datasNom" (onSelect)="searchData($event,i)" (completeMethod)="search($event)"></p-autoComplete>  
+          <button pButton type="button" icon="pi pi-times" class="ui-button-secondary"></button>      
       </div>
-      <div class="p-col p-align-center p-justify-center">
-
-        <textarea [rows]="5" [cols]="30" pInputTextarea autoResize="autoResize" placeholder="Description du trajet"
-          formControlName="descCtrl"></textarea>
-      </div>
-      <div class="p-align-center p-col p-justify-center">
-
-        <p-calendar formControlName="dateCtrl" dateFormat="yy.mm.dd" showTime="true" hourFormat="24"></p-calendar>
-
-      </div>
-
-      <div formArrayName="etapes">
-        <h3>Etapes</h3> <button (click)="addEtapeGroup()">ajout etape</button>
-            <div [formGroupName]="i" *ngFor="let control of formGroup.get('etape').controls; index as i">
-          <div class="form-group">
-                    <p-autoComplete formControlName="nom" [suggestions]="datasNom" (onSelect)="searchData($event,i)" (completeMethod)="search2($event)"></p-autoComplete>
-                    <input type="hidden" formControlName="lattitude" />
-                    <input type="hidden" formControlName="longitude" />
-                    <input type="hidden" formControlName="elevation" />
-          </div>
-        </div>
-      </div>
-
-
-      <div class="p-align-center p-col p-justify-center">
-        <button class="button " type="submit">Submit</button>
-      </div>
-
-    </form>
-  </p-card>
-
-  <pre>
-    {{ trajetForm.value | json }}
-</pre>
+   
+    <input type="hidden" formControlName="lattitude" pInputText>
+    <input type="hidden" formControlName="longitude" pInputText>
+    <input type="hidden" formControlName="elevation" pInputText>
+  </div>
 </div>
+  <p-button (click)="addEtape()"icon="pi pi-plus"></p-button>
+</form>
+
+<pre>
+  {{ trajetForm.value | json }}
+</pre>
