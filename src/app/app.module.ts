@@ -44,7 +44,7 @@ import { FooterComponent } from './components/footer/footer.component';
     MenuComponent,
     LoginFormComponent,
     FormTrajetComponent,
-    MembreTrajetsComponent
+    MembreTrajetsComponent,
     FooterComponent
   ],
   imports: [
@@ -63,7 +63,7 @@ import { FooterComponent } from './components/footer/footer.component';
     CardModule,
     InputTextareaModule,
     ReactiveFormsModule,
-    CalendarModule,
+    CalendarModule
   ],
   providers: [DatePipe],
   bootstrap: [AppComponent]

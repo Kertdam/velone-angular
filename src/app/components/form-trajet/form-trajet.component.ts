@@ -14,7 +14,6 @@ export class FormTrajetComponent implements OnInit {
 
 
   trajetForm = this.fb.group({
-
     nomCtrl : [''],
     descCtrl: [''],
     dateCtrl: ['']
