@@ -7,7 +7,7 @@ import { TrajetsComponent } from './components/trajets/trajets.component';
 import { ProfilComponent } from './components/profil/profil.component';
 import { MembreTrajetsComponent } from './components/membre-trajets/membre-trajets.component';
 import { FormTrajetComponent } from './components/form-trajet/form-trajet.component';
-
+import { StatistiqueComponent } from './components/statistique/statistique.component';
 
 const routes: Routes = [
   //{ path:'home', component: UtilisateurComponent },
@@ -18,6 +18,9 @@ const routes: Routes = [
   { path: 'login', component: LoginFormComponent},
   { path: 'form-trajet', component: FormTrajetComponent },
   { path: 'membre-trajets/:id', component: MembreTrajetsComponent },
+  { path: 'statistiques', component: StatistiqueComponent},
+  { path: 'statistiques/membreId/:id', component: StatistiqueComponent},
+  { path: 'statistiques/:id', component: StatistiqueComponent},
   { path: 'profil', component: ProfilComponent, children: [
     {
         path: 'utilisateur/:id',

@@ -1,3 +1,4 @@
+
 import { BrowserModule, } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
@@ -15,7 +16,7 @@ import { TrajetsComponent } from './components/trajets/trajets.component';
 
 import { CardModule } from 'primeng/card';
 import { MenuModule } from 'primeng/menu';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 import { CarteStatiqueComponent } from './Components/carte-statique/carte-statique.component';
 import { MenuProfilComponent } from './components/menu-profil/menu-profil.component';
@@ -28,6 +29,11 @@ import {MenubarModule} from 'primeng/menubar';
 import {TabMenuModule} from 'primeng/tabmenu';
 import {SplitButtonModule} from 'primeng/splitbutton';
 import {PasswordModule} from 'primeng/password';
+import { FormTrajetComponent } from './components/form-trajet/form-trajet.component';
+import { MembreTrajetsComponent } from 'src/app/components/membre-trajets/membre-trajets.component'
+import { StatistiqueComponent} from '../app/components/statistique/statistique.component' ;
+import {TableModule} from 'primeng/table';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 import { FormTrajetComponent } from './components/form-trajet/form-trajet.component';
 import { MembreTrajetsComponent } from 'src/app/components/membre-trajets/membre-trajets.component';
@@ -46,6 +52,7 @@ import { FooterComponent } from './components/footer/footer.component';
     FormTrajetComponent,
     MembreTrajetsComponent,
     FooterComponent
+    StatistiqueComponent,
   ],
   imports: [
     BrowserModule,
@@ -63,6 +70,10 @@ import { FooterComponent } from './components/footer/footer.component';
     CardModule,
     InputTextareaModule,
     ReactiveFormsModule,
+    CalendarModule,
+    TableModule,
+    BrowserAnimationsModule
+    
     CalendarModule
   ],
   providers: [DatePipe],
