@@ -69,6 +69,23 @@ export class FormTrajetComponent implements OnInit {
     });
   }
 
+  handleSubmit() {
+    console.log(this.trajetForm.value);
+    let trajet: Trajet = new Trajet();
+    trajet.nom = this.trajetForm.value.nomCtrl;
+    trajet.description = this.trajetForm.value.descCtrl;
+    trajet.dateDepart = this.trajetForm.value.dateCtrl;
+    trajet.dateDepart = this.transformDate(trajet.dateDepart);
+    console.log(trajet.dateDepart);
+    trajet.utilisateur = new Utilisateur();
+    trajet.utilisateur.id = 1;
+    this.trajetService.addTrajet(trajet).subscribe( res => {
+      console.log(res);
+    }, err => {
+      console.log(err);
+    });
+  }s
+
   handleDropdown(event) {
     event.query = this.results ;
   }
