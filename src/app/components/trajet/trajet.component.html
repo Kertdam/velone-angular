@@ -17,11 +17,11 @@
         <p>{{ trajet.description }}</p>
       </div>
       <div class="p-col">
-        <p>Date de depart:</p>
+        <p>Date de départ:</p>
         <p>{{ trajet.dateDepart }}</p>
       </div>
       <div class="p-col-12">
-        <p>Etape</p>
+        <p>Etapes</p>
         <div *ngFor="let etape of trajet.etapes">
           <p>{{etape.nom}}</p>
         </div>
