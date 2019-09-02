@@ -17,12 +17,28 @@
         <p-calendar formControlName="dateCtrl" dateFormat="yy.mm.dd" showTime="true" hourFormat="24"></p-calendar>
 
       </div>
+
+      <div formArrayName="etapes">
+        <h3>Etapes</h3> <button (click)="addEtapeGroup()">ajout etape</button>
+            <div [formGroupName]="i" *ngFor="let control of formGroup.get('etape').controls; index as i">
+          <div class="form-group">
+                    <p-autoComplete formControlName="nom" [suggestions]="datasNom" (onSelect)="searchData($event,i)" (completeMethod)="search2($event)"></p-autoComplete>
+                    <input type="hidden" formControlName="lattitude" />
+                    <input type="hidden" formControlName="longitude" />
+                    <input type="hidden" formControlName="elevation" />
+          </div>
+        </div>
+      </div>
+
+
       <div class="p-align-center p-col p-justify-center">
         <button class="button " type="submit">Submit</button>
       </div>
-      
 
     </form>
   </p-card>
 
+  <pre>
+    {{ trajetForm.value | json }}
+</pre>
 </div>

@@ -32,6 +32,8 @@ import {PasswordModule} from 'primeng/password';
 import { FormTrajetComponent } from './components/form-trajet/form-trajet.component';
 import { MembreTrajetsComponent } from 'src/app/components/membre-trajets/membre-trajets.component';
 import { FooterComponent } from './components/footer/footer.component';
+
+import {AutoCompleteModule} from 'primeng/autocomplete';
 @NgModule({
   declarations: [
     AppComponent,
@@ -63,7 +65,8 @@ import { FooterComponent } from './components/footer/footer.component';
     CardModule,
     InputTextareaModule,
     ReactiveFormsModule,
-    CalendarModule
+    CalendarModule,
+    AutoCompleteModule
   ],
   providers: [DatePipe],
   bootstrap: [AppComponent]

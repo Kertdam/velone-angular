@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormControl, FormGroup, Validators,FormArray } from '@angular/forms';
 import { Trajet } from 'src/app/models/trajet/trajet.model';
 import { TrajetService } from 'src/app/_services/trajet/trajet.service';
 import { Utilisateur } from 'src/app/models/utilisateur/utilisateur.model';
 import { DatePipe } from '@angular/common';
+import { Etape } from 'src/app/models/etape/etape.model';
 
 @Component({
   selector: 'app-form-trajet',
@@ -11,17 +12,16 @@ import { DatePipe } from '@angular/common';
   styleUrls: ['./form-trajet.component.scss']
 })
 export class FormTrajetComponent implements OnInit {
-
-
+  datasNom:any[] =[] ;
+  etapes:Etape[] =[];
+  etapesForm:FormArray;
   trajetForm = this.fb.group({
     nomCtrl : [''],
     descCtrl: [''],
     dateCtrl: ['']
   });
 
-  constructor(private fb: FormBuilder, private trajetService: TrajetService, private datePipe: DatePipe) {
-
-  }
+  constructor(private fb: FormBuilder, private trajetService: TrajetService, private datePipe: DatePipe) {}
 
   ngOnInit() {
   }
@@ -47,4 +47,17 @@ export class FormTrajetComponent implements OnInit {
     return this.datePipe.transform(date, 'yyyy-MM-dd HH:mm:ss ');
   }
 
+  createEtapeGroup(etape:Etape): FormGroup {
+    return this.fb.group({
+        nom: [etape.nom],
+        lattitude: [etape.lattitude],
+        longitude: [etape.longitude],
+        elevation: [etape.elevation],
+    });
+  }
+
+  addEtapeGroup(){
+    const control = <FormArray>this.trajetForm.controls['etapes'];
+    control.push(this.createEtapeGroup(new Etape()));
+  }
 }
