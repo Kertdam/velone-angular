@@ -35,8 +35,6 @@ import { StatistiqueComponent} from '../app/components/statistique/statistique.c
 import {TableModule} from 'primeng/table';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
-import { FormTrajetComponent } from './components/form-trajet/form-trajet.component';
-import { MembreTrajetsComponent } from 'src/app/components/membre-trajets/membre-trajets.component';
 import { FooterComponent } from './components/footer/footer.component';
 @NgModule({
   declarations: [
@@ -51,8 +49,8 @@ import { FooterComponent } from './components/footer/footer.component';
     LoginFormComponent,
     FormTrajetComponent,
     MembreTrajetsComponent,
-    FooterComponent
-    StatistiqueComponent,
+    FooterComponent,
+    StatistiqueComponent
   ],
   imports: [
     BrowserModule,
@@ -72,7 +70,7 @@ import { FooterComponent } from './components/footer/footer.component';
     ReactiveFormsModule,
     CalendarModule,
     TableModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
     
     CalendarModule
   ],
