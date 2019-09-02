@@ -1,0 +1,12 @@
+::ng-deep body .ui-widget {
+    font-family: "Open Sans", "Helvetica Neue", sans-serif;
+    font-size: 13px;
+    text-decoration: none;
+}
+::ng-deep body .ui-table .ui-table-thead > tr > th {
+    padding: 0.571em 0.857em;
+    border: 1px solid #c8c8c8;
+    font-weight: 200;
+    color: #333333;
+    background-color: #f4f4f4;
+}

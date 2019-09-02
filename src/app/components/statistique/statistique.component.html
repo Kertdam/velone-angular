@@ -1,1 +1,27 @@
-<p>statistique works!</p>
+ 
+    <h3 class="first">Statistiques </h3>
+    <p-table [value]="stat">
+        <ng-template pTemplate= "header">
+            <tr>
+                <th>vitesse moyenne</th>
+                <th>Ascension</th>
+                <th>temps Trajet</th>
+                <th>distance Parcourue</th>
+                <th>Altitude max</th>
+                <th>Altitude min</th>
+                <th>Kcalorie depense</th>
+            </tr>
+            
+        </ng-template>
+        <ng-template pTemplate= "body" let-state>
+            <tr>
+                <td>{{state.vitesseMoyenne}}</td>
+                <td> {{state.ascension}}</td>
+                <td>{{state.tempsTrajet}}</td>
+                <td> {{state.distance_parcourue}} </td>
+                <td> {{state.altitudeMax}} </td>
+                <td> {{state.altitudeMin}} </td>
+                <td> {{state.kcalDepense}}</td>
+            </tr>
+        </ng-template>
+    </p-table>

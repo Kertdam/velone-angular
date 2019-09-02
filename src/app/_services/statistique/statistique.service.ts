@@ -20,7 +20,7 @@ export class StatistiqueService {
   }
 
   public getStatistiqueByMembreId(id: number): Observable<Statistique[]> {
-    return this.http.get<Statistique[]>((`${this.baseUrl}/idmembre/${id}`));
+    return this.http.get<Statistique[]>((`${this.baseUrl}/membreId/${id}`));
   }
 
   public addStatistique(statistique: Statistique): Observable<Statistique> {
