@@ -23,7 +23,8 @@ export class FormTrajetComponent implements OnInit {
               private trajetService: TrajetService, 
               private datePipe: DatePipe, 
               private geocodingService: GeocodingService,
-              private elevationService: ElevationService) {
+              private elevationService: ElevationService
+              ) {
 
   }
 
@@ -72,15 +73,16 @@ export class FormTrajetComponent implements OnInit {
   handleSubmit() {
     console.log(this.trajetForm.value);
     let trajet: Trajet = new Trajet();
-    trajet.nom = this.trajetForm.value.nomCtrl;
-    trajet.description = this.trajetForm.value.descCtrl;
-    trajet.dateDepart = this.trajetForm.value.dateCtrl;
+    trajet.nom = this.trajetForm.value.nom;
+    trajet.description = this.trajetForm.value.description;
+    trajet.dateDepart = this.trajetForm.value.dateDepart;
     trajet.dateDepart = this.transformDate(trajet.dateDepart);
-    console.log(trajet.dateDepart);
+    trajet.etapes =  this.trajetForm.value.etapes ;
     trajet.utilisateur = new Utilisateur();
     trajet.utilisateur.id = 1;
     this.trajetService.addTrajet(trajet).subscribe( res => {
-      console.log(res);
+      
+      console.log("Res "+res);
     }, err => {
       console.log(err);
     });
@@ -88,6 +90,10 @@ export class FormTrajetComponent implements OnInit {
 
   handleDropdown(event) {
     event.query = this.results ;
+  }
+
+  transformDate(date) {
+    return this.datePipe.transform(date, 'yyyy-MM-dd HH:mm:ss ');
   }
 
 }

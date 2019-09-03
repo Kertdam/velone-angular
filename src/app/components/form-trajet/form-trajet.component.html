@@ -1,7 +1,9 @@
 <form [formGroup]="trajetForm">
-  <input type="text" formControlName="nom" pInputText>
-  <input type="text" formControlName="description" pInputText>
-  <input type="text" formControlName="dateDepart" pInputText>
+    <input type="text" formControlName="nom" placeholder="Nom du trajet"  pInputText>
+    <textarea formControlName="description" [rows]="5" [cols]="30" pInputTextarea autoResize="autoResize" placeholder="Description du trajet" >
+    </textarea>
+    <p-calendar formControlName="dateDepart" dateFormat="yy.mm.dd" showTime="true" hourFormat="24"></p-calendar>
+
 <div formArrayName="etapes" *ngFor="let item of trajetForm.get('etapes').controls; let i = index;">
   <div [formGroupName]="i">
       <div class="ui-inputgroup"> 
@@ -14,7 +16,8 @@
     <input type="hidden" formControlName="elevation" pInputText>
   </div>
 </div>
-  <p-button (click)="addEtape()"icon="pi pi-plus"></p-button>
+  <p-button (click)="addEtape()" icon="pi pi-plus"></p-button>
+  <p-button (click)=" handleSubmit()" label="sauvegarder"></p-button>
 </form>
 
 <pre>
