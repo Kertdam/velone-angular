@@ -48,7 +48,9 @@ import { FooterComponent } from './components/footer/footer.component';
     MenuComponent,
     LoginFormComponent,
     FormTrajetComponent,
-    StatistiqueComponent
+    StatistiqueComponent,
+    MembreTrajetsComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
