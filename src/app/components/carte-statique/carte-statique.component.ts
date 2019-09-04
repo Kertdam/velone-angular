@@ -1,6 +1,7 @@
-import { Component, AfterContentInit, Input } from '@angular/core';
+import { Component, AfterContentInit, Input, SimpleChange } from '@angular/core';
 import { Trajet } from 'src/app/models/trajet/trajet.model';
 import { Etape } from 'src/app/models/etape/etape.model';
+import { SimpleChanges } from '@angular/core';
 
 import * as L from 'leaflet';
 import 'leaflet-routing-machine';
@@ -21,16 +22,19 @@ L.Icon.Default.mergeOptions({
 export class CarteStatiqueComponent {
 
   @Input() trajet: Trajet;
+  tmp: string;
+  carte:any ;
+  wp = new Array<L.LatLng>();
 
   constructor() { 
-    console.log('composant carte statistique' + this.trajet)
+    console.log('composant carte statistique' + this.trajet);
   }
 
   ngAfterViewInit() {
-    let tmp = 'carte-'+this.trajet.id ;
-    let wp = new Array<L.LatLng>()
+    this.tmp = 'carte-'+this.trajet.id ;
+    
     // Generate leaflet map and disabcle all controls
-    let carte = L.map(tmp, {
+    this.carte = L.map(this.tmp, {
       zoomControl: false,
       keyboard: false,
       dragging: false,
@@ -40,29 +44,47 @@ export class CarteStatiqueComponent {
       tap: false,
       touchZoom: false
     })
-    console.log(this.trajet.etapes)
+    
     // Transform Etape to Waypoint
-    for (let etape of this.trajet.etapes) {
-        wp.push(L.latLng(etape.lattitude, etape.longitude));
-    }
-    console.log("wp"+wp);
+    this.updateWaypoints();
 
-    carte.fitBounds(this.detectBounds());
+    this.carte.fitBounds(this.detectBounds());
 
     //Ajout du layer de carte leaflet depuis OSM
     L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
-      attribution: tmp
-    }).addTo(carte);
+      attribution: this.tmp
+    }).addTo(this.carte);
 
-    //Dissable leaflet drouting machine control and ad waypoints to map
+    //Dissable leaflet routing machine control and ad waypoints to map
     L.Routing.control({
-      waypoints: (wp),
+      waypoints: (this.wp),
       routeWhileDragging: false,
       autoRoute: true,
       draggableWaypoints: false,
       show:false,
       addWaypoints:false
-    }).addTo(carte);
+    }).addTo(this.carte);
+  }
+  // Transform Etape to Waypoint
+  updateWaypoints(){
+
+    this.wp= new Array<L.LatLng>()
+    let emptyEtape : boolean=false;
+    if(typeof(this.trajet.etapes)!=undefined){
+      for (let etape of this.trajet.etapes) {
+        if(typeof(etape.lattitude)=='number' &&  typeof(etape.longitude)=='number'){
+          this.wp.push(L.latLng(etape.lattitude, etape.longitude));
+        }else{
+          emptyEtape=true;
+        }
+      }
+    }
+    if(!emptyEtape){ 
+      L.Routing.control({
+        waypoints: (this.wp)
+      }).addTo(this.carte);
+    }
+    
   }
 
   detectBounds() {
@@ -87,4 +109,13 @@ export class CarteStatiqueComponent {
     }
     return [[maxLat, maxLng], [minLat, minLng]];
   }
+
+  ngOnChanges(changes: SimpleChanges) {
+    console.log("LE CHANGEMENT ");
+    console.log( this.trajet);
+    this.updateWaypoints();
+    this.carte.fitBounds(this.detectBounds());
+    this.carte.invalidateSize();
+  }
+  
 }

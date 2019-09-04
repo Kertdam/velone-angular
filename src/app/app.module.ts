@@ -36,6 +36,8 @@ import {TableModule} from 'primeng/table';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 
 import { FooterComponent } from './components/footer/footer.component';
+
+import {AutoCompleteModule} from 'primeng/autocomplete';
 @NgModule({
   declarations: [
     AppComponent,
@@ -68,11 +70,9 @@ import { FooterComponent } from './components/footer/footer.component';
     CardModule,
     InputTextareaModule,
     ReactiveFormsModule,
-    CalendarModule,
     TableModule,
-    BrowserAnimationsModule,
-    
-    CalendarModule
+    CalendarModule,
+    AutoCompleteModule
   ],
   providers: [DatePipe],
   bootstrap: [AppComponent]
