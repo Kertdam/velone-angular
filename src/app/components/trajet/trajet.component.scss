@@ -1,4 +1,10 @@
-#fichiers{
+.container {
+    display: flex;
+    justify-content: space-around;
+    justify-content: center;
 
 }
 
+#full-grid {
+    background-color: white;
+}
