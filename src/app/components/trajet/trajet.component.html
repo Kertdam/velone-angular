@@ -1,39 +1,49 @@
 <div class="p-grid">
-                   
-  <div class="p-col-4">
-    <div class="p-grid p-align-center">
+
+  <div class="p-col-4" >
+    <div class="p-grid">
       <div class="p-col-12">
         <div class="p-grid" id="header">
-          <div class="p-col">
+          <div class="p-col-1">
+
+          </div>
+          <div class="p-col-5">
             <h2>{{ trajet.nom }}</h2>
           </div>
-          <div class="p-col">
+          <div class="p-col-6">
             <p>crée par <a [routerLink]="['/utilisateur',trajet.utilisateur.id]"
                 routerLinkActive="router-link-active">{{trajet.utilisateur.nom}} {{trajet.utilisateur.prenom}}</a></p>
           </div>
         </div>
       </div>
-      <div class="p-col">
-        <p>Description :</p>
-        <p>{{ trajet.description }}</p>
+      <div class="p-col-1">
+
       </div>
       <div class="p-col">
-        <p>Date de départ:</p>
-        <p>{{ trajet.dateDepart }}</p>
-      </div>
-      <div class="p-col-12">
-        <p>Etapes</p>
+        <strong id="full-grid">Etapes</strong>
         <div *ngFor="let etape of trajet.etapes">
           <p>{{etape.nom}}</p>
         </div>
       </div>
-      <div id="fichiers" class="p-col-12">
-        List des fichiers
+      <div class="p-col">
+        <strong id="full-grid">Date et heure de départ:</strong>
+        <p>{{ trajet.dateDepart }}</p>
       </div>
-      <div class="p-col-12">
-        List des Membres
+      <div class="p-grid p-col-12 ">
+        <div class="p-col-1">
+
+        </div>
+        <div class="p-col">
+          <strong id="full-grid">Description :</strong>
+          <p>&ensp; {{ trajet.description }}</p>
+        </div>
+
+
+
+
+
       </div>
-      
+
       <div class="p-col-12">
         <app-statistique></app-statistique>
       </div>
