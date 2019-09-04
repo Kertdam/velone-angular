@@ -1,0 +1,59 @@
+/* Add shadows to create the "card" effect */
+.card {
+    
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: 23vw;
+    height: 30%;
+    background-color: white;
+    margin-bottom: 30px;
+    border: solid 1px lightgrey;
+    border-radius: 10px 0 10px 4px;
+
+    
+}
+  
+/* On mouse-over, add a deeper shadow */
+.card:hover {
+    box-shadow: 8px 4px 16px 0 rgba(0, 0, 0, 0.2);
+    background-color: rgb(196, 208, 224);
+}
+  
+/* Add some padding inside the card container */
+.container {
+    display: flex;
+    padding: 2px 16px;
+    align-items: space-around;
+    justify-content: space-around;
+    flex-wrap: wrap;
+
+}
+
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.content {
+    display: flex;
+    justify-content: space-around;
+
+}
+.carte {
+    height: 150px;
+    width: 250px;
+    border : solid 1px lightgray;
+    margin-right: 2px;
+}
+
+.footer {
+    display: flex;
+    justify-content: center;
+}
+
+h3 {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}

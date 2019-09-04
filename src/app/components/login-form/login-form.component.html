@@ -1,28 +1,15 @@
 
 
-
-
-
-<div class="p-grid p-justify-center">
-    <div class="p-col-4">
-            <div class="main_content">
-                    <div class="p-grid p-justify-center">
-                            <div class="p-col-12">
-                    <span>Nom utilisateur</span>
-                    <div class="p-col-12">
-                    <input type="text" pInputText [(ngModel)]="username"  />
-                    </div>
-                    <div class="p-col-12">
-                    <span>Mot de passe </span>
-                    </div>
-                    <div class="p-col-12">
-                    <input type="password" pInputText [(ngModel)]="password"/>
-                    </div>
-                    <div class="p-col-12">
-                    <button pButton type="button" (click)="login()" label="connexion"></button>
-                    </div>
-                            </div>
-                    </div>
-                </div>
-    </div>
-</div>
+          <h3>Connexion</h3>
+          <div class="p-col-12">
+            <input placeholder="Nom utilisateur" pInputText [(ngModel)]="username" />
+          </div>
+          <div class="p-col-12">
+          </div>
+          <div class="p-col-12">
+            <input placeholder="Mot de passe" type="password" pInputText [(ngModel)]="password" />
+          </div>
+          <div class="p-col-12">
+            <button id="button" pButton type="button" (click)="login()" label="connexion"></button>
+          </div>
+          

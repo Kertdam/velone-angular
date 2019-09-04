@@ -48,8 +48,6 @@ import { FooterComponent } from './components/footer/footer.component';
     MenuComponent,
     LoginFormComponent,
     FormTrajetComponent,
-    MembreTrajetsComponent,
-    FooterComponent,
     StatistiqueComponent
   ],
   imports: [

@@ -1,4 +1,6 @@
-<div class="p-grid">
+<!--
+
+        <div class="p-grid">
   <div class="p-col-4" *ngFor="let trajet of trajets; index as i">
           <p-card>
                   <p-header>
@@ -28,3 +30,37 @@
               </div>
   </div>
 </div>
+-->
+
+
+<div class="container">
+
+        <div class="card" *ngFor="let trajet of trajets; index as i">
+            <div class="header">
+    
+                <div>
+                    <a [routerLink]="['/trajet',trajet.id]" routerLinkActive="router-link-active">&ensp;{{trajet.nom}}</a>
+                </div>
+                <div>
+                    crée par <a [routerLink]="['/utilisateur',trajet.utilisateur.id]"
+                        routerLinkActive="router-link-active">{{trajet.utilisateur.nom}} {{trajet.utilisateur.prenom}}</a>
+                </div>
+            </div>
+            <br>
+            <div class="content">
+                <div>
+                    {{trajet.description}}
+                </div>
+                <div class="carte" id="carte-{{trajet.id}}">
+                    <app-carte-statique [trajet]="trajet"></app-carte-statique>
+                </div>
+            </div>
+            <br>
+            <div class="footer">
+                Départ prévu le {{trajet.dateDepart}}
+            </div>
+        </div>
+    </div>
+    
+    <router-outlet></router-outlet>
+

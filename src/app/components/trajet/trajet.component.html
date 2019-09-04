@@ -3,7 +3,7 @@
   <div class="p-col-4">
     <div class="p-grid p-align-center">
       <div class="p-col-12">
-        <div class="p-grid">
+        <div class="p-grid" id="header">
           <div class="p-col">
             <h2>{{ trajet.nom }}</h2>
           </div>
@@ -18,11 +18,11 @@
         <p>{{ trajet.description }}</p>
       </div>
       <div class="p-col">
-        <p>Date de depart:</p>
+        <p>Date de départ:</p>
         <p>{{ trajet.dateDepart }}</p>
       </div>
       <div class="p-col-12">
-        <p>Etape</p>
+        <p>Etapes</p>
         <div *ngFor="let etape of trajet.etapes">
           <p>{{etape.nom}}</p>
         </div>
