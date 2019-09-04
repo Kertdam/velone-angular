@@ -31,20 +31,10 @@ export class TrajetComponent implements OnInit {
   ngOnInit() {
     this.id = Number(this.route.snapshot.paramMap.get('id'));
     this.trajetService.getTrajetById(this.id).subscribe(trajet => {
-      
-      this.etapeService.getEtapesByIdTrajet(trajet.id).subscribe(etapes => {
-        this.trajet = trajet;
-        this.trajet.etapes = etapes ;
-      }, err => {
-        console.log(err);
-      }); 
-      // En attendant d'avoir le back pour Etape
-      
+      this.trajet = trajet;
+      console.log(trajet.etapes)
     }, err => {
       console.log(err);
     });
   }
-
-        
-
 }

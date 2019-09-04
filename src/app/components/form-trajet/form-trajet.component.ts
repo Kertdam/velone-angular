@@ -18,6 +18,7 @@ export class FormTrajetComponent implements OnInit {
   datas : any ;
   trajetForm: FormGroup;
   etapes: FormArray;
+  isFilled : Boolean =false  ;
 
   constructor(private formBuilder: FormBuilder, 
               private trajetService: TrajetService, 
@@ -63,11 +64,13 @@ export class FormTrajetComponent implements OnInit {
       ).subscribe(elev => {
         this.trajetForm.get('etapes').get(`${i}`).get('elevation').setValue(elev.data[0]);
       });
+      
   }
 
   search(event) {
     this.geocodingService.getGeocode(event.query).subscribe(data => {
       this.datas = data.features ;
+      this.isFilled=true;
       this.datasNom = [];
       for (const d of data.features) {
         this.datasNom.push(
@@ -98,6 +101,7 @@ export class FormTrajetComponent implements OnInit {
 
   handleDropdown(event) {
     event.query = this.results ;
+    
   }
 
   transformDate(date) {
