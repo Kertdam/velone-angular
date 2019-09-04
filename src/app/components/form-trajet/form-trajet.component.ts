@@ -42,7 +42,8 @@ export class FormTrajetComponent implements OnInit {
       nom: '',
       lattitude: '',
       longitude: '',
-      elevation: ''
+      elevation: '',
+      numero: ''
     });
   }
 
@@ -53,8 +54,15 @@ export class FormTrajetComponent implements OnInit {
 
   searchData(event,i){
     let res = this.datas.find(feature => feature.properties.label==event);
-    this.trajetForm.get('etapes').get(`${i}`).get('lattitude').setValue(res.geometry.coordinates[1]);
     this.trajetForm.get('etapes').get(`${i}`).get('longitude').setValue(res.geometry.coordinates[0]);
+    this.trajetForm.get('etapes').get(`${i}`).get('lattitude').setValue(res.geometry.coordinates[1]);
+    this.trajetForm.get('etapes').get(`${i}`).get('numero').setValue(i);
+    this.elevationService.getElevation(
+        this.trajetForm.get('etapes').get(`${i}`).get('lattitude').value,
+        this.trajetForm.get('etapes').get(`${i}`).get('longitude').value
+      ).subscribe(elev => {
+        this.trajetForm.get('etapes').get(`${i}`).get('elevation').setValue(elev.data[0]);
+      });
   }
 
   search(event) {
