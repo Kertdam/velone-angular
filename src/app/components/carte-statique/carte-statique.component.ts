@@ -31,7 +31,12 @@ export class CarteStatiqueComponent {
   }
 
   ngAfterViewInit() {
-    this.tmp = 'carte-'+this.trajet.id ;
+    this.tmp = 'carte-'
+    console.log("id"+this.trajet.id);
+    if(typeof(this.trajet.id)!='undefined'){
+      this.tmp +=this.trajet.id ;
+      console.log("tmp"+this.tmp);
+    }
     
     // Generate leaflet map and disabcle all controls
     this.carte = L.map(this.tmp, {
@@ -113,9 +118,11 @@ export class CarteStatiqueComponent {
   ngOnChanges(changes: SimpleChanges) {
     console.log("LE CHANGEMENT ");
     console.log( this.trajet);
-    this.updateWaypoints();
-    this.carte.fitBounds(this.detectBounds());
-    this.carte.invalidateSize();
+    if(typeof(this.carte)!='undefined'){
+      this.updateWaypoints();
+      this.carte.fitBounds(this.detectBounds());
+      this.carte.invalidateSize();
+    }
   }
   
 }

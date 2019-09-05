@@ -1,33 +1,46 @@
+<br>
+ <div class="p-grid p-nogutter">
+   <div id="form" class="p-col-3">
+     <form [formGroup]="trajetForm">
+       <div class="p-grid">
+         <div class="p-col-5">
+           <label>Nom du trajet :</label>
+         </div>
+         <div class="p-col-7">
+           <input type="text" formControlName="nom" placeholder="Nom du trajet" pInputText>
+         </div>
+         <div class="p-col-12">
+           <label>Description :</label>
+          </div>
+          <div class="p-col-12">
+            <textarea pInputTextarea formControlName="description" [rows]="5" [cols]="38" placeholder="Description du trajet">
+            </textarea>
+          </div>
+         <div class="p-col-5">
+           <label>Date de départ :</label>
+         </div>
+         <div class="p-col-6">
+           <p-calendar formControlName="dateDepart" dateFormat="yy.mm.dd" showTime="true" hourFormat="24"></p-calendar>
+         </div>
+       </div>
+       <hr>
+       <label>Etapes :</label><br>
+        <div formArrayName="etapes" *ngFor="let item of trajetForm.get('etapes').controls; let i = index;">
+           <div [formGroupName]="i">
+             <div class="ui-inputgroup">
+               <p-autoComplete formControlName="nom" [suggestions]="datasNom" (onSelect)="searchData($event,i)"
+                 (completeMethod)="search($event)"></p-autoComplete>
+             </div>
 
-<div>
-  <form [formGroup]="trajetForm">
-      <input type="text" formControlName="nom" placeholder="Nom du trajet"  pInputText>
-      <textarea formControlName="description" [rows]="5" [cols]="30" pInputTextarea autoResize="autoResize" placeholder="Description du trajet" >
-      </textarea>
-      <p-calendar formControlName="dateDepart" dateFormat="yy.mm.dd" showTime="true" hourFormat="24"></p-calendar>
-
-  <div formArrayName="etapes" *ngFor="let item of trajetForm.get('etapes').controls; let i = index;">
-    <div [formGroupName]="i">
-        <div class="ui-inputgroup"> 
-            <p-autoComplete formControlName="nom" [suggestions]="datasNom" (onSelect)="searchData($event,i)" (completeMethod)="search($event)"></p-autoComplete>  
-            <button pButton type="button" icon="pi pi-times" class="ui-button-secondary"></button>      
-        </div>
-    
-      <input type="hidden" formControlName="lattitude" pInputText>
-      <input type="hidden" formControlName="longitude" pInputText>
-      <input type="hidden" formControlName="elevation" pInputText>
-      <input type="hidden" formControlName="numero" pInputText>
+             <input type="hidden" formControlName="lattitude" pInputText>
+             <input type="hidden" formControlName="longitude" pInputText>
+             <input type="hidden" formControlName="elevation" pInputText>
+             <input type="hidden" formControlName="numero" pInputText>
+           </div>
+         </div>
+       <p-button (click)="addEtape()" icon="pi pi-plus"></p-button>
+       <p-button (click)=" handleSubmit()" label="sauvegarder"></p-button>
+      </form>
     </div>
-  </div>
-    <p-button (click)="addEtape()" icon="pi pi-plus"></p-button>
-    <p-button (click)=" handleSubmit()" label="sauvegarder"></p-button>
-  </form>
-  <pre>
-      {{ trajetForm.value | json }}
-    </pre>
-    
-</div>
-
-<div *ngIf="isFilled" id="carte-undefined" class="carte" style="height:100%" >
-    <app-carte-statique class="p-col-8" [trajet]="trajetForm.value"></app-carte-statique>
-</div>
+   <app-carte-statique class="p-col-9 p-align-start"  [trajet]="trajetForm.value"></app-carte-statique>
+ </div>

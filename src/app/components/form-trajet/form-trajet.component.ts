@@ -76,13 +76,11 @@ export class FormTrajetComponent implements OnInit {
         this.datasNom.push(
           d.properties.label
         );
-        console.log(d);
       }
     });
   }
 
   handleSubmit() {
-    console.log(this.trajetForm.value);
     let trajet: Trajet = new Trajet();
     trajet.nom = this.trajetForm.value.nom;
     trajet.description = this.trajetForm.value.description;

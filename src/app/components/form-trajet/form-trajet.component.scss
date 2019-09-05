@@ -1,12 +1,7 @@
-#form-card {
-
-  background-color: bisque;
-  width: auto;
-  display: flex;
-  justify-content: center;
+:host{
+    min-height:84vh;
 }
 
-.input-form-trajet {
-
-  width: 200px; 
+#form{
+    padding: 5px;
 }
